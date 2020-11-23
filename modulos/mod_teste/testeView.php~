@@ -1,0 +1,27 @@
+<?php
+
+class testeView extends classView
+{
+
+	 private $tags = array(
+	 						'conteudo'  => '',
+							
+							);    
+
+	function testeView ()
+	{
+		
+		
+		
+		parent::loadTemplate();	
+	}
+	
+	function setTags($id, $valor)
+	{
+		$this $tags[$id] = $valor;
+	}
+
+}
+
+
+?>
