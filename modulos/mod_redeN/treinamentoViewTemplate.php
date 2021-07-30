@@ -46,7 +46,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <form role="form" class="upload1" id="upload1" method="POST" action="index.php" enctype="multipart/form-data">
+                <form role="form" class="upload" id="upload" method="POST" action="index.php" enctype="multipart/form-data">
                 <div class="col-lg-6">
                         
                     <!-- MAX_FILE_SIZE deve preceder o campo input -->

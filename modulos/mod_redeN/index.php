@@ -58,18 +58,18 @@ class redeNController
                         $file->arrayFileSave($treinar->getPesosCamadaFinal(),'pesoCamadaSaida.txt');
                         $file->arrayFileSave($treinar->getArrayMaxMin(),'maxMin.txt');
                         
-                       
-                  
-                        echo $treinar->processarGraficoJSON();
-                          //echo $treinar->getMsg();
-                        
-                        
                         $this->msg = ' <div class="alert alert-info">  Finalizado';
                         $this->msg .= ' QtdNeuronio:'.$treinar->getNCESC().', Epocas: '.$treinar->getEpocas().', Eta: .'.$treinar->getEta().', Erros:  '.$treinar->getErrodes();
                         $this->msg .= '<br/>'.$treinar->getMsg();
                         $this->msg .='</br>'.$treinar->getTimeMsg();
                         $this->msg .= ' </div> ';
                         
+                  
+                        echo $treinar->processarGraficoJSON();
+                        //   echo $treinar->getMsg();
+                        
+                        
+                      
            
                         
                           
@@ -141,9 +141,6 @@ class redeNController
                 $view->display();
             }
                 
-                
-           
-
 
 	}
 

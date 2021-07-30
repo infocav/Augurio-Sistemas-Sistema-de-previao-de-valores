@@ -17,19 +17,19 @@ var options = {
 };
 
 
-window.onload = function () {
+window.onload = function() {
 
 };
 // Inicia o jQuery
-$(function () {
+$(function() {
 
     // Cria uma variável que vamos utilizar para verificar se o
     // formulário está sendo enviado
     //var enviando_formulario = false;
 
     // Captura o evento de submit do formulário
-    $('.upload').submit(function () {
-        alert('funcao adicionada');
+    $('.upload').submit(function() {
+        // alert('funcao adicionada');
         // O objeto do formulário
         var obj = this;
 
@@ -63,7 +63,7 @@ $(function () {
         // Envia os dados com Ajax
         $.ajax({
             // Antes do envio
-            beforeSend: function () {
+            beforeSend: function() {
                 // Configura a variável enviando
                 //enviando_formulario = true;
 
@@ -96,7 +96,9 @@ $(function () {
             contentType: false,
 
             // Se enviado com sucesso
-            success: function (dados) {
+            success: function(dados) {
+
+                console.log(dados);
                 volta_submit();
 
 
@@ -108,8 +110,7 @@ $(function () {
 
                 data = {
                     labels: obj.labels,
-                    datasets: [
-                        {
+                    datasets: [{
                             label: "Dados reais",
                             fillColor: "rgba(220,220,220,0.2)",
                             strokeColor: "rgba(220,220,220,1)",
@@ -138,18 +139,16 @@ $(function () {
 
                 data2 = {
                     labels: obj[0],
-                    datasets: [
-                        {
-                            label: "Erro",
-                            fillColor: "rgba(110, 44, 44, 0.2)",
-                            strokeColor: "rgba(110, 44, 44, 0.6)",
-                            pointColor: "rgba(110, 44, 44, 0.6)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(110, 44, 44, 0.6)",
-                            data: obj.erro
-                        }
-                    ]
+                    datasets: [{
+                        label: "Erro",
+                        fillColor: "rgba(110, 44, 44, 0.2)",
+                        strokeColor: "rgba(110, 44, 44, 0.6)",
+                        pointColor: "rgba(110, 44, 44, 0.6)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(110, 44, 44, 0.6)",
+                        data: obj.erro
+                    }]
                 };
 
                 resetCanvas();
@@ -161,7 +160,7 @@ $(function () {
 
             },
             // Se der algum problema
-            error: function (request, status, error) {
+            error: function(request, status, error) {
                 // Volta o botão de submit
                 volta_submit();
 
@@ -178,7 +177,7 @@ $(function () {
 
 
 
-    $('.teste').submit(function () {
+    $('.teste').submit(function() {
 
         // O objeto do formulário
         var obj = this;
@@ -200,8 +199,7 @@ $(function () {
     });
 });
 
-function debug(data)
-{
+function debug(data) {
     $("textarea#debug").val(data);
 }
 
@@ -219,14 +217,12 @@ function resetCanvas() {
 
     // $("textarea#debug").val(dados2.trim());
 
-//        $('#GraficoLine2').remove(); // this is my <canvas> element
-//        $('#lineLegend2').remove();
-//        $('.panel-body').append('<canvas id="GraficoLine2" style="width:100%;"></canvas><div id="lineLegend2"></div>');
-//  
-//        var ctx2 = document.getElementById("GraficoLine2").getContext("2d");
-//        LineChart2 = new Chart(ctx2).Line(data2, options);
-//        legend(document.getElementById("lineLegend2"), data2);
+    //        $('#GraficoLine2').remove(); // this is my <canvas> element
+    //        $('#lineLegend2').remove();
+    //        $('.panel-body').append('<canvas id="GraficoLine2" style="width:100%;"></canvas><div id="lineLegend2"></div>');
+    //  
+    //        var ctx2 = document.getElementById("GraficoLine2").getContext("2d");
+    //        LineChart2 = new Chart(ctx2).Line(data2, options);
+    //        legend(document.getElementById("lineLegend2"), data2);
 
-}
-;
-
+};
